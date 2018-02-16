@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ForeingChange.Views.MainView"
+             BackgroundColor="#D6E2D2"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="20,30,20,10">
+            <Label 
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                Text="Foreing Exchange"
+                TextColor="#9B5427">
+            </Label>
+            <Label
+                Text="Cantidad:"
+                TextColor="#9B5427">                
+            </Label>
+            <Entry
+                Text="{Binding Amount, Mode=TwoWay}"
+                Placeholder="Ingresa la cantidad a convertir.">
+            </Entry>
+            <Label
+                Text="Moneda Origen:"
+                TextColor="#9B5427">
+            </Label>
+            <Picker
+                ItemDisplayBinding="{Binding Name}"
+                ItemsSource="{Binding Rates}"
+                Title="Seleccione la moneda origen.">
+            </Picker>
+            <Label
+                Text="Moneda Destino:"
+                TextColor="#9B5427">
+            </Label>
+            <Picker
+                Title="Seleccione la moneda destino.">
+            </Picker>
+            <ActivityIndicator>                
+            </ActivityIndicator>
+            <Button
+                BackgroundColor="#E99655"
+                BorderRadius="25"
+                HeightRequest="50"
+                FontAttributes="Bold"
+                TextColor="White"
+                Text="Convert">                
+            </Button>
+            <Label
+                BackgroundColor="#9B5427"
+                FontSize="Large"
+                HorizontalTextAlignment="Center"
+                Text="Cargando conversión"   
+                TextColor="White"             
+                VerticalOptions="FillAndExpand"
+                VerticalTextAlignment="Center">                
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
